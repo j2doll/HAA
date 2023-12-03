@@ -1,4 +1,5 @@
 import pandas as pd
+import datetime
 
 tickers = ["TIP", "IEF", "SPY", "IWM", "VEA", "VWO", "TLT", "PDBC", "VNQ"]
 _current_prices = {'TIP':0.0, 'IEF':0.0, 'SPY':0.0, 'IWM':0.0, 'VEA':0.0, 'VWO':0.0, 'TLT':0.0, "PDBC":0.0, 'VNQ':0.0}
@@ -7,8 +8,10 @@ _3m_ago_prices = {'TIP':0.0, 'IEF':0.0, 'SPY':0.0, 'IWM':0.0, 'VEA':0.0, 'VWO':0
 _6m_ago_prices = {'TIP':0.0, 'IEF':0.0, 'SPY':0.0, 'IWM':0.0, 'VEA':0.0, 'VWO':0.0, 'TLT':0.0, "PDBC":0.0, 'VNQ':0.0}
 _12m_ago_prices = {'TIP':0.0, 'IEF':0.0, 'SPY':0.0, 'IWM':0.0, 'VEA':0.0, 'VWO':0.0, 'TLT':0.0, "PDBC":0.0, 'VNQ':0.0}
 return_sums = {'TIP':0.0, 'IEF':0.0, 'SPY':0.0, 'IWM':0.0, 'VEA':0.0, 'VWO':0.0, 'TLT':0.0, "PDBC":0.0, 'VNQ':0.0}
+
 start_date = "2019-03-09"
-end_date = "2023-03-09"
+now = datetime.datetime.now()
+end_date = now.strftime('%Y-%m-%d') # "2023-03-09"
 
 # ETF 가격 데이터 가져오기
 df = pd.DataFrame()
