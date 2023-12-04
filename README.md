@@ -1,2 +1,3 @@
 # HAA
-HAA 전략
+:kr: HAA 전략
+
